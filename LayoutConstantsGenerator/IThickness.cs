@@ -6,12 +6,12 @@
 
         string Name { get; }
 
-        double Left { get; }
+        string Left { get; }
 
-        double Top { get; }
+        string Top { get; }
 
-        double Right { get; }
+        string Right { get; }
 
-        double Down { get; }
+        string Bottom { get; }
     }
 }

@@ -4,10 +4,26 @@
     {
         public string Comment { get; }
         public string Name { get; }
-        public double Left { get; }
-        public double Top { get; }
-        public double Right { get; }
-        public double Down { get; }
+        public string Left { get; }
+        public string Top { get; }
+        public string Right { get; }
+        public string Bottom { get; }
+
+        public Thickness(
+            string comment,
+            string name,
+            string left,
+            string top,
+            string right,
+            string bottom)
+        {
+            Comment = comment;
+            Name = name;
+            Left = left;
+            Top = top;
+            Right = right;
+            Bottom = bottom;
+        }
 
         public Thickness(
             string comment,
@@ -15,14 +31,14 @@
             double left,
             double top,
             double right,
-            double down)
+            double bottom)
         {
             Comment = comment;
             Name = name;
-            Left = left;
-            Top = top;
-            Right = right;
-            Down = down;
+            Left = left.ToString();
+            Top = top.ToString();
+            Right = right.ToString();
+            Bottom = bottom.ToString();
         }
 
         public Thickness(
@@ -32,10 +48,10 @@
         {
             Comment = comment;
             Name = name;
-            Left = value;
-            Top = value;
-            Right = value;
-            Down = value;
+            Left = value.ToString();
+            Top = value.ToString();
+            Right = value.ToString();
+            Bottom = value.ToString();
         }
     }
 }

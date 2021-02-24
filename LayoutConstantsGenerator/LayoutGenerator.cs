@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace LayoutConstantsGenerator
@@ -10,11 +11,17 @@ namespace LayoutConstantsGenerator
         {
             StringBuilder builder = new StringBuilder();
 
-            builder.AppendLine($"using System;");
+            builder.AppendLine($"");
+            builder.AppendLine($"/// This file was generated at {DateTime.UtcNow.ToLongTimeString()} on the {DateTime.UtcNow.ToLongDateString()} (UTC).");
+            builder.AppendLine($"");
+
             builder.AppendLine($"using Xamarin.Forms;");
             builder.AppendLine($"");
             builder.AppendLine($"namespace TODO");
             builder.AppendLine($"{{");
+            builder.AppendLine($"\t ///<summary>");
+            builder.AppendLine($"\t /// Layout constants based on this: https://getbootstrap.com/docs/5.0/utilities/spacing/");
+            builder.AppendLine($"\t ///</summary>");
             builder.AppendLine($"\t public static class LayoutConstants");
             builder.AppendLine($"\t {{");
             
@@ -34,11 +41,11 @@ namespace LayoutConstantsGenerator
             builder.AppendLine($"\t\t ///<summary>");
             builder.AppendLine($"\t\t /// {thickness.Comment}");
             builder.AppendLine($"\t\t ///</summary>");
-            builder.AppendLine($"\t\t public const Thickness {thickness.Name} = new Thickness(");
-            builder.AppendLine($"\t\t\t left:  {thickness.Left},");
-            builder.AppendLine($"\t\t\t top:   {thickness.Top},");
-            builder.AppendLine($"\t\t\t right: {thickness.Right},");
-            builder.AppendLine($"\t\t\t down:  {thickness.Down});");
+            builder.AppendLine($"\t\t public static readonly Thickness {thickness.Name} = new Thickness(");
+            builder.AppendLine($"\t\t\t left:   {thickness.Left},");
+            builder.AppendLine($"\t\t\t top:    {thickness.Top},");
+            builder.AppendLine($"\t\t\t right:  {thickness.Right},");
+            builder.AppendLine($"\t\t\t bottom: {thickness.Bottom});");
             builder.AppendLine($"");
         }
     }
