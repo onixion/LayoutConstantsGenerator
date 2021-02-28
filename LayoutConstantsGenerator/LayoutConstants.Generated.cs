@@ -1,5 +1,5 @@
 
-/// This file was generated at 10:22:17 AM on the Wednesday, February 24, 2021 (UTC).
+/// This file was generated at 1:14:29 PM on the Sunday, February 28, 2021 (UTC).
 
 using Xamarin.Forms;
 
@@ -1386,6 +1386,41 @@ namespace TODO
 			 top:    0,
 			 right:  50,
 			 bottom: 50);
+
+		 ///<summary>
+		 /// Spacing x0
+		 ///</summary>
+		 public const double S0 = 0;
+
+		 ///<summary>
+		 /// Spacing x1
+		 ///</summary>
+		 public const double S = 10;
+
+		 ///<summary>
+		 /// Spacing x1
+		 ///</summary>
+		 public const double S1 = 10;
+
+		 ///<summary>
+		 /// Spacing x2
+		 ///</summary>
+		 public const double S2 = 20;
+
+		 ///<summary>
+		 /// Spacing x3
+		 ///</summary>
+		 public const double S3 = 30;
+
+		 ///<summary>
+		 /// Spacing x4
+		 ///</summary>
+		 public const double S4 = 40;
+
+		 ///<summary>
+		 /// Spacing x5
+		 ///</summary>
+		 public const double S5 = 50;
 
 	 }
 }

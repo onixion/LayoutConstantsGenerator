@@ -8,7 +8,7 @@ namespace LayoutConstantsGenerator
         {
             double value = 10;
 
-            var thicknesses = new IThickness[]
+            var thicknesses = new Thickness[]
             {
                 #region Padding
 
@@ -216,7 +216,20 @@ namespace LayoutConstantsGenerator
                 #endregion
             };
 
-            File.WriteAllText(Path.Combine("..", "..", "..", "LayoutConstants.Generated.cs"), LayoutGenerator.Generate(thicknesses));
+            var doubles = new Double[]
+            {
+                new Double("Spacing x0", "S0", value * 0),
+                new Double("Spacing x1", "S" , value * 1),
+                new Double("Spacing x1", "S1", value * 1),
+                new Double("Spacing x2", "S2", value * 2),
+                new Double("Spacing x3", "S3", value * 3),
+                new Double("Spacing x4", "S4", value * 4),
+                new Double("Spacing x5", "S5", value * 5),
+            };
+
+            File.WriteAllText(
+                Path.Combine("..", "..", "..", "LayoutConstants.Generated.cs"), 
+                LayoutGenerator.Generate(thicknesses, doubles));
         }
     }
 }

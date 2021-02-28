@@ -7,7 +7,7 @@ namespace LayoutConstantsGenerator
     public static class LayoutGenerator
     {
 
-        public static string Generate(IEnumerable<IThickness> thicknesses)
+        public static string Generate(IEnumerable<Thickness> thicknesses, IEnumerable<Double> doubles)
         {
             StringBuilder builder = new StringBuilder();
 
@@ -30,13 +30,18 @@ namespace LayoutConstantsGenerator
                 AppendThickness(builder, thickness);
             }
 
+            foreach (var @double in doubles)
+            {
+                AppendDouble(builder, @double);
+            }
+
             builder.AppendLine($"\t }}");
             builder.AppendLine($"}}");
 
             return builder.ToString();
         }
 
-        static void AppendThickness(StringBuilder builder, IThickness thickness)
+        static void AppendThickness(StringBuilder builder, Thickness thickness)
         {
             builder.AppendLine($"\t\t ///<summary>");
             builder.AppendLine($"\t\t /// {thickness.Comment}");
@@ -46,6 +51,15 @@ namespace LayoutConstantsGenerator
             builder.AppendLine($"\t\t\t top:    {thickness.Top},");
             builder.AppendLine($"\t\t\t right:  {thickness.Right},");
             builder.AppendLine($"\t\t\t bottom: {thickness.Bottom});");
+            builder.AppendLine($"");
+        }
+
+        static void AppendDouble(StringBuilder builder, Double @double)
+        {
+            builder.AppendLine($"\t\t ///<summary>");
+            builder.AppendLine($"\t\t /// {@double.Comment}");
+            builder.AppendLine($"\t\t ///</summary>");
+            builder.AppendLine($"\t\t public const double {@double.Name} = {@double.Value};");
             builder.AppendLine($"");
         }
     }
