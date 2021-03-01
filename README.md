@@ -1,8 +1,13 @@
 # LayoutConstants Generator
 
-This generator is used to generate a *LayoutConstants.cs* file containing padding, margin and other spacing definitions similar to [Bootstrap 5](https://getbootstrap.com/docs/5.0/utilities/spacing/) spacing utilities.
+This generator is used to generate a LayoutConstants.cs file containing padding, margin, and other spacing definitions similar to [Bootstrap 5](https://getbootstrap.com/docs/5.0/utilities/spacing/) spacing utilities. 
 
-The tool is uses *Xamarin.Forms*.
+This tool generates two files:
+
+- *LayoutConstants.Generated.cs*: This file contains a static class containing all spacing constants.
+- *LayoutConstantsConverter.Generated.cs*: This file contains a converter class, that can convert a given string to the correct spacing constant value. You might need to adapt the converter for your needs.
+
+This generator tool aims for the *Xamarin.Forms* framework, but the code can easily be changed to work with any other framework.
 
 ```csharp
 public static class LayoutConstants
@@ -44,5 +49,5 @@ public static class LayoutConstants
 
 ## How to use it?
 
-Run the console application and the file *LayoutConstants.Generated.cs* inside the project will be updated.
-Make sure to check the timestamp in the generated file.
+Run the console application and the two files *LayoutConstants.Generated.cs* and *LayoutConstantConverter.Generated.cs* will be updated.
+Make sure to check the timestamps of the generated files.
