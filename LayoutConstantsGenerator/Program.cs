@@ -230,6 +230,10 @@ namespace LayoutConstantsGenerator
             File.WriteAllText(
                 Path.Combine("..", "..", "..", "LayoutConstants.Generated.cs"), 
                 LayoutGenerator.Generate(thicknesses, doubles));
+
+            File.WriteAllText(
+                Path.Combine("..", "..", "..", "LayoutConstantsConverter.Generated.cs"),
+                ConverterGenerator.Generate(thicknesses, doubles));
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace LayoutConstantsGenerator
 {
-    public class Thickness : IThickness
+    public class Thickness
     {
         public string Comment { get; }
         public string Name { get; }

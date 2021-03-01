@@ -6,7 +6,6 @@ namespace LayoutConstantsGenerator
 {
     public static class LayoutGenerator
     {
-
         public static string Generate(IEnumerable<Thickness> thicknesses, IEnumerable<Double> doubles)
         {
             StringBuilder builder = new StringBuilder();
@@ -19,9 +18,9 @@ namespace LayoutConstantsGenerator
             builder.AppendLine($"");
             builder.AppendLine($"namespace TODO");
             builder.AppendLine($"{{");
-            builder.AppendLine($"\t ///<summary>");
-            builder.AppendLine($"\t /// Layout constants based on this: https://getbootstrap.com/docs/5.0/utilities/spacing/");
-            builder.AppendLine($"\t ///</summary>");
+            builder.AppendLine($"\t /// <summary>");
+            builder.AppendLine($"\t /// Layout constants.");
+            builder.AppendLine($"\t /// </summary>");
             builder.AppendLine($"\t public static class LayoutConstants");
             builder.AppendLine($"\t {{");
             
@@ -43,9 +42,9 @@ namespace LayoutConstantsGenerator
 
         static void AppendThickness(StringBuilder builder, Thickness thickness)
         {
-            builder.AppendLine($"\t\t ///<summary>");
+            builder.AppendLine($"\t\t /// <summary>");
             builder.AppendLine($"\t\t /// {thickness.Comment}");
-            builder.AppendLine($"\t\t ///</summary>");
+            builder.AppendLine($"\t\t /// </summary>");
             builder.AppendLine($"\t\t public static readonly Thickness {thickness.Name} = new Thickness(");
             builder.AppendLine($"\t\t\t left:   {thickness.Left},");
             builder.AppendLine($"\t\t\t top:    {thickness.Top},");
@@ -56,9 +55,9 @@ namespace LayoutConstantsGenerator
 
         static void AppendDouble(StringBuilder builder, Double @double)
         {
-            builder.AppendLine($"\t\t ///<summary>");
+            builder.AppendLine($"\t\t /// <summary>");
             builder.AppendLine($"\t\t /// {@double.Comment}");
-            builder.AppendLine($"\t\t ///</summary>");
+            builder.AppendLine($"\t\t /// </summary>");
             builder.AppendLine($"\t\t public const double {@double.Name} = {@double.Value};");
             builder.AppendLine($"");
         }
