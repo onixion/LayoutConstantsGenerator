@@ -1,4 +1,4 @@
-# LayoutConstantsGenerator
+# LayoutConstants Generator
 
 This generator is used to generate a *LayoutConstants.cs* file containing padding, margin and other spacing definitions similar to [Bootstrap 5](https://getbootstrap.com/docs/5.0/utilities/spacing/) spacing utilities.
 
