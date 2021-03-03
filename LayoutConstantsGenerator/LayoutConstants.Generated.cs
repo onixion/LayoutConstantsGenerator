@@ -1,15 +1,15 @@
 
-/// This file was generated at 10:09:52 AM on the Monday, March 1, 2021 (UTC).
+/// This file was generated at 5:40:54 PM on the Wednesday, March 3, 2021 (UTC).
 
 using Xamarin.Forms;
 
 namespace TODO
 {
-    /// <summary>
-    /// Layout constants.
-    /// </summary>
-    public static class LayoutConstants
-	{
+	 /// <summary>
+	 /// Layout constants.
+	 /// </summary>
+	 public static class LayoutConstants
+	 {
 		 /// <summary>
 		 /// Padding Uniform x0.
 		 /// </summary>

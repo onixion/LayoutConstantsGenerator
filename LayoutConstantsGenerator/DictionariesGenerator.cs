@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace LayoutConstantsGenerator
 {
-    public static class ConverterGenerator
+    public static class DictionariesGenerator
     {
 
         public static string Generate(IEnumerable<Thickness> thicknesses, IEnumerable<Double> doubles)
@@ -25,9 +23,9 @@ namespace LayoutConstantsGenerator
             builder.AppendLine($"namespace TODO");
             builder.AppendLine($"{{");
             builder.AppendLine($"\t /// <summary>");
-            builder.AppendLine($"\t /// Layout constants converter.");
+            builder.AppendLine($"\t /// Dictionaries.");
             builder.AppendLine($"\t /// </summary>");
-            builder.AppendLine($"\t public class LayoutConstantsConverter : IValueConverter");
+            builder.AppendLine($"\t public class DictionariesGenerator");
             builder.AppendLine($"\t {{");
 
             // String to Thickness.
@@ -48,22 +46,8 @@ namespace LayoutConstantsGenerator
                 AppendDouble(builder, @double);
             }
             builder.AppendLine($"\t\t }};");
-            builder.AppendLine($"");
 
-            builder.AppendLine($"\t\t public object Convert(object value, Type targetType, object parameter, CultureInfo culture)");
-            builder.AppendLine($"\t\t {{");
-            builder.AppendLine($"\t\t\t // TODO add logic here");
-            builder.AppendLine($"\t\t\t throw new NotImplementedException();");
-            builder.AppendLine($"\t\t }}");
-            builder.AppendLine($"");
-
-            builder.AppendLine($"\t\t public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)");
-            builder.AppendLine($"\t\t {{");
-            builder.AppendLine($"\t\t\t // TODO add logic here");
-            builder.AppendLine($"\t\t\t throw new NotImplementedException();");
-            builder.AppendLine($"\t\t }}");
-
-            builder.AppendLine($"\t }}");
+            builder.AppendLine($"\t }};");
             builder.AppendLine($"}}");
 
             return builder.ToString();

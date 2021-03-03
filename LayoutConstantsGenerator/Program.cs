@@ -232,8 +232,8 @@ namespace LayoutConstantsGenerator
                 LayoutGenerator.Generate(thicknesses, doubles));
 
             File.WriteAllText(
-                Path.Combine("..", "..", "..", "LayoutConstantsConverter.Generated.cs"),
-                ConverterGenerator.Generate(thicknesses, doubles));
+                Path.Combine("..", "..", "..", "LayoutConstants.Dictionaries.Generated.cs"),
+                DictionariesGenerator.Generate(thicknesses, doubles));
         }
     }
 }
