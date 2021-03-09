@@ -49,5 +49,5 @@ public static class LayoutConstants
 
 ## How to use it?
 
-Run the console application and the two files *LayoutConstants.Generated.cs* and *LayoutConstantConverter.Generated.cs* will be updated.
+Run the console application and the file *LayoutConstants.Generated.cs* will be updated.
 Make sure to check the timestamps of the generated files.
